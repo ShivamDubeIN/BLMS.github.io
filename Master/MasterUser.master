@@ -1,0 +1,18 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master/MasterPage.Master" AutoEventWireup="true" CodeFile="MasterUser.master.cs" Inherits="Book_Library.Master.MasterUser" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="menu">
+                <ul id="trans-nav">
+                    <li><a href="../PageUser/MyProfile.aspx">My Info</a></li>
+                    <li><a href="../PageUser/Issue.aspx">Issue Books</a></li>
+                    <li><a href="../PageUser/UserReturnBook.aspx">Issued Status</a></li>
+                    <li><a href="../PageUser/Setting.aspx">Settings</a></li>
+                    
+                </ul>
+            
+            </div>
+    <asp:ContentPlaceHolder runat="server" ID="contentuser">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>

@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Book_Library.Master.MasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../StyleSheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main">
+            <div id="header">
+                <img src="../Images/logo.jpg" width="950" style="float:left"/>
+            </div>
+            <div id="username">
+                <ul id="navnew">
+                    <li class="current"><a href="../PageCommon/index.aspx">Home</a></li>
+                    <li><a href="../PageCommon/Search.aspx">Search Book</a></li>
+                    <li><a href="../PageCommon/Feedback.aspx">Feedback</a></li>
+                    <li><a href="../PageCommon/ContactUS.aspx">Contact us</a></li>
+                    <li><a href="../PageCommon/AboutUs.aspx">About us</a></li>
+                </ul>
+            </div>
+            <div id="show">
+                <div id="Left" style="width:710px;display:block;float:left;">
+                    <marquee>Welcome to Book Library Management System</marquee>
+                </div>
+                <div id="right" style="float:right;">
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                        <AnonymousTemplate>
+                            [ <a href="~/PageCommon/login.aspx" id="HeadLoginStatus" runat="server" style="color: #00BFBF; font-size: medium;">Log In</a> ]
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            Welcome <span class="bold">
+                                <asp:HyperLink ID="HyperLink1" ForeColor="PeachPuff" Font-Size="Larger" ToolTip="MyHome"  runat="server"> <asp:LoginName ID="HeadLoginName" runat="server" /></asp:HyperLink>
+                            </span>&nbsp;&nbsp;
+                            [
+                            <asp:LoginStatus ID="LoginStatus1" ForeColor="#87cfe6" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/PageCommon/index.aspx" />
+                            ]
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div id="footer">
+                <hr />
+                <div style="float:left;">
+                    <p> &copy;2020 Shivam Dubey</p>
+                </div>
+                <div style="float:right;">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <b>Find Us</b>
+
+                            </td>
+                            <td>
+                                &nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <a href="https://facebook.com/ShivamDubeIndia"><img src="../Images/facebook.png" width="40" height="40" /></a>
+                            </td>
+                            <td>
+                                &nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <a href="https://youtube.com/Shivamdubein"><img src="../Images/youtube.png" width="35" height="35"/</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
